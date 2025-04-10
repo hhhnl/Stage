@@ -4,7 +4,7 @@ import layouts from "@/layouts/index.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "",
     component: layouts,
     name: "layouts",
     meta: {
@@ -12,13 +12,63 @@ const routes = [
     },
     children: [
       {
-        path: "/",
+        path: "",
         component: () => import("@/pages/home/index.vue"),
-        name: "home",
+        name: "Home",
         meta: {
-          title: "统计仪表盘",
-          icon: "Odometer",
+          title: "Home",
         },
+      },
+      {
+        path: "Promos",
+        component: () => import("@/pages/Promos/index.vue"),
+        name: "Promos",
+        meta: {
+          title: "Promos",
+        },
+      },
+      {
+        path: "Wallet",
+        component: () => import("@/pages/Wallet/index.vue"),
+        name: "Wallet",
+        meta: {
+          title: "Wallet",
+        },
+      },
+      {
+        path: "VIP",
+        component: () => import("@/pages/VIP/index.vue"),
+        name: "VIP",
+        meta: {
+          title: "VIP",
+        },
+      },
+      {
+        path: "Profile",
+        component: () => import("@/pages/Profile/index.vue"),
+        name: "Profile",
+        redirect: { name: "Settings" },
+        meta: {
+          title: "Profile",
+        },
+        children: [
+          {
+            path: "Settings",
+            component: () => import("@/pages/Profile/components/Settings.vue"),
+            name: "Settings",
+            meta: {
+              title: "Settings",
+            },
+          },
+          {
+            path: "KYC",
+            component: () => import("@/pages/Profile/components/Kyc.vue"),
+            name: "KYC",
+            meta: {
+              title: "KYC",
+            },
+          },
+        ],
       },
     ],
   },

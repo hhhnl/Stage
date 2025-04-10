@@ -95,10 +95,12 @@
       View All Games!
     </div>
   </div>
+  <Foot />
 </template>
 
 <script setup>
 import Head from "@/components/Head.vue";
+import Foot from "@/components/Foot.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Autoplay, EffectCreative } from "swiper/modules";
 import "swiper/css";

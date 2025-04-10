@@ -10,7 +10,7 @@
       @click="switchTab(item, idx)"
     >
       <img
-        v-if="currentTab !== idx"
+        v-if="currentTab !== item.name"
         class="size-5 block mx-auto"
         :src="item.icon"
         alt=""
@@ -23,7 +23,7 @@
       />
       <span
         class="block mx-auto text-xs mt-0.5"
-        :class="{ 'text-(--color2)': idx === currentTab }"
+        :class="{ 'text-(--color2)': item.name === currentTab }"
         >{{ item.title }}</span
       >
     </div>
@@ -31,49 +31,56 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { ref, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
+const route = useRoute();
 
-const currentTab = ref(0);
+const currentTab = ref("");
+
+// console.log(route.matched[1].name);
+currentTab.value = route.matched[1]?.name;
 
 const tabs = [
   {
     icon: "/images/icon_tabber/home.png",
     selectedIcon: "/images/icon_tabber/home1.png",
     title: "Home",
-    path: "/home",
+    name: "Home",
   },
   {
     icon: "/images/icon_tabber/diamond.png",
     selectedIcon: "/images/icon_tabber/diamond1.png",
     title: "Promos",
-    path: "/home",
+    name: "Promos",
   },
   {
     icon: "/images/icon_tabber/wallet-three.png",
     selectedIcon: "/images/icon_tabber/wallet-three1.png",
     title: "Wallet",
-    path: "/home",
+    name: "Wallet",
   },
   {
     icon: "/images/icon_tabber/swimming-ring.png",
     selectedIcon: "/images/icon_tabber/swimming-ring1.png",
     title: "VIP",
-    path: "/home",
+    name: "VIP",
   },
   {
     icon: "/images/icon_tabber/user.png",
     selectedIcon: "/images/icon_tabber/user1.png",
     title: "Profile",
-    path: "/home",
+    name: "Profile",
   },
 ];
 
 const switchTab = (item, idx) => {
-  currentTab.value = idx;
-  // router.push(item.path);
+  if (currentTab.value == item.name) return;
+  currentTab.value = item.name;
+  router.push({
+    name: item.name,
+  });
 };
 </script>
 
