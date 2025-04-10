@@ -1,0 +1,38 @@
+:root {
+  --color: #817675;
+  --color2: #de3c2d;
+  --color3: #878787;
+  --color4: #ededee;
+  --color5: #8c8c8c;
+  --color6: #969696;
+  --color7: #777;
+  --color8: #eb8a81;
+  --color9: #7acfff;
+  --color10: #04c600;
+  --color11: #8c8c8c80;
+
+
+  --bg: #130c0c;
+  --bg2: linear-gradient(180deg, #1a1a1a 0%, #0e0404 100%);
+  --bg3: #0e0404;
+  --bg4: #ffffff1a;
+  --bg5: #131417;
+  --bg6: #1c0f0e;
+  --bg7: #26272c;
+  --bg8: #1e2026;
+  --bg9: #1e1e26;
+  --bg10: #3c3c3c;
+  --bg11: #00000080;
+  --bg12: #23252d;
+
+
+  --border: #291919;
+  --border2: #292626;
+  --border3: #2a1715;
+  --border4: #2a2c34;
+  --border5: #4c5054;
+}
+
+body {
+  background: var(--bg2);
+}

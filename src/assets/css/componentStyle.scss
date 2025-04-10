@@ -1,0 +1,9 @@
+@layer components {
+
+  .gbtn {
+    @apply bg-(--color2) text-white px-4 py-1 rounded-md text-sm font-normal;
+  }
+  .gbox {
+    @apply px-4 pt-2 mx-auto;
+  }
+}
