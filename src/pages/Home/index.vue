@@ -16,7 +16,12 @@
         :speed="1000"
       >
         <swiper-slide v-for="(item, idx) in swieprList" :key="idx">
-          <img src="/images/image/banner.png" alt="" class="block" />
+          <img
+            @click="clickSwiper(item)"
+            src="/images/image/banner.png"
+            alt=""
+            class="block w-full"
+          />
         </swiper-slide>
         <div class="swiper-pagination"></div>
       </swiper>
@@ -33,8 +38,14 @@
               alt=""
             /><span>{{ item.title }}</span>
           </div>
-          <!---->
-          <button class="gbtn text-xs p-1" v-if="idx != 0">查看更多</button>
+          <!-- 查看更多 -->
+          <button
+            class="gbtn mini"
+            v-if="idx != 0"
+            @click="router.push({ name: 'Games' })"
+          >
+            查看更多
+          </button>
         </div>
         <div class="w-full overflow-x-auto">
           <div class="gap-2 whitespace-nowrap">
@@ -91,6 +102,7 @@
     </div>
     <div
       class="w-[60%] text-sm/[35px] bg-(--bg6) text-center text-(--color4) border border-(--border3) m-auto my-10"
+      @click="router.push({ name: 'Games' })"
     >
       View All Games!
     </div>
@@ -106,6 +118,8 @@ import { Pagination, Autoplay, EffectCreative } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
 const modules = [Pagination, Autoplay, EffectCreative];
 
@@ -130,6 +144,10 @@ const swieprList = [
     img: "/images/image/banner.png",
   },
 ];
+
+const clickSwiper = (item) => {
+  router.push({ name: "PromoDetails" });
+};
 
 /**
  * LIST 模块

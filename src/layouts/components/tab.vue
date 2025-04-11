@@ -42,6 +42,14 @@ const currentTab = ref("");
 // console.log(route.matched[1].name);
 currentTab.value = route.matched[1]?.name;
 
+watch(
+  () => route.name,
+  (newVal) => {
+    currentTab.value = route.matched[1]?.name;
+    window.scrollTo(0, 0);
+  }
+);
+
 const tabs = [
   {
     icon: "/images/icon_tabber/home.png",

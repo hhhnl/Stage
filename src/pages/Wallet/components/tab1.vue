@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <button class="gbtn w-full rounded-none py-3">存款</button>
+  <button class="gbtn xl">存款</button>
   <p class="text-(--color2) text-sm text-right mt-5 underline">重要提示</p>
 </template>
 

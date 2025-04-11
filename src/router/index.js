@@ -70,6 +70,22 @@ const routes = [
           },
         ],
       },
+      {
+        path: "PromoDetails",
+        component: () => import("@/pages/PromoDetails/index.vue"),
+        name: "PromoDetails",
+        meta: {
+          title: "PromoDetails",
+        },
+      },
+      {
+        path: "Games",
+        component: () => import("@/pages/Games/index.vue"),
+        name: "Games",
+        meta: {
+          title: "Games",
+        },
+      },
     ],
   },
 ];

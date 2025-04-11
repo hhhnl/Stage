@@ -1,27 +1,7 @@
 <template>
   <Head />
   <div class="gbox">
-    <div class="font-bold text-xl text-[#fff] flex items-center gap-2">
-      <div class="bg-(--bg7) rounded-md p-0.5">
-        <i class="text-(--color2) stroke-(--color2)">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M31 36L19 24L31 12"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </i>
-      </div>
-      <span>Promo</span>
-    </div>
+    <HeadBack2>Promo</HeadBack2>
 
     <div class="grid gap-2 mt-2">
       <div class="mb-12" v-for="(item, idx) in 10" :key="idx">
@@ -46,6 +26,7 @@
 <script setup>
 import Head from "@/components/Head.vue";
 import Foot from "@/components/Foot.vue";
+import HeadBack2 from "@/components/HeadBack2.vue";
 </script>
 
 <style scoped lang="scss"></style>

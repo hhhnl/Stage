@@ -3,7 +3,7 @@
     class="font-bold text-xl text-(--color4) flex items-center justify-between py-2.5 px-2 border-b border-(--border2)"
   >
     <div class="flex items-center gap-1">
-      <div class="px-1">
+      <div class="px-1" @click="router.back()">
         <i class="" style="color: var(--color2); font-size: 20px">
           <svg
             width="26"
@@ -30,6 +30,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+</script>
 
 <style scoped lang="scss"></style>
